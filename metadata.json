@@ -1,0 +1,7 @@
+{
+  "name": "Digital Homestead",
+  "description": "A premium editorial learning platform for rural education, empowering students and teachers with digital tools.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "name": "digital-homestead-api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  }
+}

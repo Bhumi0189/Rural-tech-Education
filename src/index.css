@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-headline: "Lexend", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --color-primary: #0d631b;
+  --color-primary-container: #2e7d32;
+  --color-on-primary: #ffffff;
+  --color-secondary: #005db7;
+  --color-secondary-container: #64a1ff;
+  --color-on-secondary: #ffffff;
+  --color-tertiary: #774c00;
+  --color-tertiary-container: #986200;
+  --color-on-tertiary: #ffffff;
+  --color-background: #f9f9f6;
+  --color-surface: #f9f9f6;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f3f4f1;
+  --color-surface-container: #eeeeeb;
+  --color-surface-container-high: #e8e8e5;
+  --color-surface-container-highest: #e2e3e0;
+  --color-on-surface: #1a1c1a;
+  --color-on-surface-variant: #40493d;
+  --color-outline: #707a6c;
+  --color-outline-variant: #bfcaba;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-on-surface font-body antialiased;
+    background-image:
+      radial-gradient(circle at top left, rgba(13, 99, 27, 0.08), transparent 28%),
+      radial-gradient(circle at top right, rgba(0, 93, 183, 0.07), transparent 22%),
+      linear-gradient(180deg, #fbfbf8 0%, #f8f8f4 100%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(13, 99, 27, 0.18);
+    color: #1a1c1a;
+  }
+}
+
+@layer components {
+  .page-surface {
+    @apply rounded-[2rem] border border-white/70 bg-white/85 shadow-[0_20px_60px_rgba(26,28,26,0.08)] backdrop-blur-xl;
+  }
+
+  .section-title {
+    @apply font-headline text-xl font-extrabold tracking-tight text-on-surface md:text-2xl;
+  }
+
+  .section-subtitle {
+    @apply text-sm text-on-surface-variant;
+  }
+
+  .soft-card {
+    @apply rounded-[1.5rem] border border-white/70 bg-white/90 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
